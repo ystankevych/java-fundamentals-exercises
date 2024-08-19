@@ -30,7 +30,8 @@ public class CrazyStreams {
      * @return account with max balance wrapped with optional
      */
     public Optional<Account> findRichestPerson() {
-        throw new ExerciseNotCompletedException();
+        return accounts.stream()
+                .max(Comparator.comparing(Account::getBalance));
     }
 
     /**
